@@ -12,6 +12,9 @@ RUN npm install
 # Copy the application files
 COPY . .
 
+# Change permissions to ensure proper access
+RUN chmod -R 755 /usr/src/app
+
 # Expose the application port
 EXPOSE 3000
 
