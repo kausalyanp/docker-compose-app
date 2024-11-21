@@ -6,7 +6,7 @@ services:
     container_name: node_app
     working_dir: /usr/src/app
     volumes:
-      - ./app:/usr/src/app  # Mount local code to the container
+      - ./:/usr/src/app  # Mount local code to the container or use (- ./app:/usr/src/app)
     ports:
       - "3000:3000"  # Expose the app on port 3000
     command: "npm start"  # Command to start the Node.js app
@@ -17,6 +17,11 @@ services:
       DB_USER: admin
       DB_PASSWORD: password
       DB_NAME: my_database
+  
+  node_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
 
   db:
     image: mysql:8
