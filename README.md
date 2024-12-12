@@ -54,10 +54,21 @@ Step 1: Install Docker and Docker Compose.
 
 ```
 
-Step 2: Directory Structure:
+Step 2:   Steps to Create a Node.js Application:
 
-  app/: Contains the Node.js application code (e.g., server.js).
-  nginx.conf: Custom NGINX configuration file
+Directory Structure:
+
+- app/: Contains the Node.js application code (e.g., server.js).
+- nginx.conf: Custom NGINX configuration file
+
+ ```
+.
+├── app/
+│   ├── package.json
+│   ├── server.js
+├── docker-compose.yml
+├── nginx.conf
+```
 
 Step 3: Run docker-compose:
 
@@ -72,11 +83,9 @@ Step 4: This command will:
   Run the services in detached mode (-d flag).
 
   1. Access the Application:
-
     Open a browser and navigate to http://localhost. The reverse proxy (NGINX) directs requests to the Node.js app.
 
-  2. Stop the Application:
-
+  3. Stop the Application:
     Use the following command to stop and remove the containers:
     ```
     docker-compose down
