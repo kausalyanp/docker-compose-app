@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql2');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 4000;
 
 // Database connection
 const db = mysql.createConnection({
@@ -35,12 +35,17 @@ app.get('/users', (req, res) => {
   });
 });
 
-// listen to the 0.0.0.0
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server running at http://0.0.0.0:${port}`);
-});
-
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
-});                                     
+}).on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} is in use. Trying another port.`);
+    const newPort = PORT + 1;
+    app.listen(newPort, () => {
+      console.log(`Server started on fallback port http://localhost:${newPort}`);
+    });
+  } else {
+    throw err;
+  }
+});
