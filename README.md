@@ -1,4 +1,3 @@
-# docker-compose-app
 Here’s a sample docker-compose.yml file for a multi-container application setup. This example includes a web application using Node.js, a database using MySQL, and a reverse proxy using NGINX.
 
 ## Step 1. Install Docker and Docker Compose:
@@ -97,4 +96,4 @@ Directory Structure:
    ```
    docker rmi <image_id>
    ```
->> Crested By Kausalya N P
+>> Created By Kausalya N P
