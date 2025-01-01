@@ -70,7 +70,7 @@ Directory Structure:
       - Run the services in detached mode (-d flag).
 
 2. Access the Application:
-    Open a browser and navigate to http://localhost:4000 (as the port declared here is 4000) or  connect to ypur ip addesss http://ip_address:4000 The reverse proxy (NGINX) directs requests to the Node.js app.
+    Open a browser and navigate to http://localhost:3000 (as the port declared here is 3000) or  connect to ypur ip addesss http://ip_address:3000 The reverse proxy (NGINX) directs requests to the Node.js app.
   
 3. Stop the Application:
     Use the following command to stop and remove the containers:
