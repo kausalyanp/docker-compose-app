@@ -1,5 +1,5 @@
-Here’s a sample docker-compose.yml file for a multi-container application setup. This example includes a web application using Node.js, a database using MySQL, and a reverse proxy using NGINX.
-
+Here’s a sample docker-compose.yml file for a Multi-Container Application setup. This example includes a web application using Node.js, a database using MySQL, and a reverse proxy using NGINX.
+<a name="top"></a>
 ## Step 1. Install Docker and Docker Compose:
 ### 1. Install Docker:
    ```
@@ -48,8 +48,8 @@ docker-compose --version
 Directory Structure:
 
 - app/: Contains the Node.js application code (e.g., server.js)  and package.json.
-- nginx.conf: Custom NGINX configuration file
-- docker-compose.yml
+- nginx.conf: Custom NGINX configuration file.NGINX service to act as a reverse proxy for your Node.js application. This file will define how requests are routed to the app service.
+- docker-compose.yml: This yml file used to define and manage multi-container Docker applications.
 
  ```
 .
@@ -96,4 +96,10 @@ Directory Structure:
    ```
    docker rmi <image_id>
    ```
+5. Default Name: The default name for the Compose file is docker-compose.yml. Custom Name: You can use a different file name, but you must specify it when running commands
+   ```
+   docker-compose -f custom-file.yml up
+   ```
+   [Back to Top](#top)
+
 >> Created By Kausalya N P
